@@ -1,2 +1,5 @@
 # Gestione-Campi
- Il tipo della Cofit sà organizzarsi, ma con questo servizio sono sicuro che non ci saranno più malintesi
+ Piccolo sito per la gesitione dei campi della Cofit evitare malintesi e per prenotare i campi  
+ Realizzato utilizzando l'API di supabase.
+
+ 
