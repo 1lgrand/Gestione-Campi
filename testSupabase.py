@@ -16,4 +16,3 @@ def checkAccount(email:str,password:str):
         return True
 
 
-checkAccount("admin","dada")
