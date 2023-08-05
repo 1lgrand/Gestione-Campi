@@ -23,8 +23,8 @@ def checkAccount(email:str,password:str):
         return True
     
 
-def checkPrenotazioni():
-    pass  
+def checkPrenotazioni(dict):
+    sup.table("prenotazioni").insert(dict).execute()
 
 #Index
 @app.route('/')
@@ -40,10 +40,10 @@ def login():
 
         if checkAccount(username,password):
             #Account esistente esito POSIITIVO
-            return render_template('login.html', is_authenticated=True, message="Ok, va tutto bene")
+            return render_template('login.html')
         else:
             #Account non esistente esito NEGATIVO
-            return render_template('login.html', is_authenticated=False, message="Credenziali non valide")
+            return render_template('login.html')
     else:
         return render_template('login.html')
 
@@ -55,20 +55,30 @@ def addPrenotazione():
         idCampo = int(request.form['campo'])
 
         data_str = request.form['data'] #Questa data viene fornita con un formato sbagliato quindi cambio il formato
-        data = datetime.datetime.strptime(data_str, '%Y-%m-%d')
+        data = datetime.datetime.strptime(data_str, '%Y-%m-%d').date()
 
-        print(data)
-
-        #orarioInizio = request.form['orario_inizio']
-        #cognome = request.form['cognome']
+        orarioInizio = request.form['orario_inizio']
+        cognome = request.form['cognome']
 
         # Stampa i dati ricevuti dal form a console
         print("ID Campo:", str(idCampo))
-        #print("Data:", str(data))
-        #print("Orario di Inizio:", str(orarioInizio))
-        #print("Cognome:", str(cognome))
+        print("Data:", str(data))
+        print("Orario di Inizio:", str(orarioInizio))
+        print("Cognome:", str(cognome))
 
         # Resto del codice per gestire la prenotazione
+
+        ora_fine = datetime.datetime.strptime(orarioInizio,'%H:%M') + datetime.timedelta(hours=1)
+
+        prenotazione = {
+            "idCampo": idCampo,
+            "data":str(data),
+            "ora_inizio":str(orarioInizio),
+            "ora_fine": str(ora_fine),
+            "cognome":cognome
+        }
+
+        checkPrenotazioni(prenotazione)
 
         return render_template("addPrenotazione.html")
     else:
