@@ -3,4 +3,10 @@
  Realizzato utilizzando l'API di supabase. e Flash per la gestione in Backend
  
 
- 
+# Palette
+
+- #0DAB76
+- #139A43
+- #0B5D1E
+- #053B06
+- #000000

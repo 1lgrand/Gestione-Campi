@@ -4,23 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/index.css">
-    <title>Homepage</title>
-
-    
+    <link rel="stylesheet" href="../static/css/index.css">
+    <title>Prenotazioni</title>
 
 </head>
 <body>
     
-    <h1 class="title">Benvenuto alla cofit bla bla bla</h1>
-
-    <nav>
-        <a href="\login">login qui</a>
-        <a href="\addPrenotazione">Prenota un campo</a>
-    </nav>
+    <h1 class="title" id="newPrenotazione">Nuova prenotazione</h1>
 
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <div class="formContainer">
+        <form id="form" action="/addPrenotazione" method="post"></form>
+
+            <h1 class="heading">Seleziona Campo</h1>
+
+            <div class="container text-center">
+                <div class="row">
+                    <h2 class="sport">Calcio</h2>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        
+                        <div class="myCard">
+                            <img class="cardImg" src="../static/images/campoCalcio.jpg" width="30%">
+                            <div class="cardTitle">
+                                <h3>Calcio a 7</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col">
+
+                        <div class="myCard">
+                            <img class="cardImg" src="../static/images/campoCalcio.jpg" width="30%">
+                            <div class="cardTitle">
+                                <h3>Calcio a 6</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col">
+
+                        <div class="myCard">
+                            <img class="cardImg" src="../static/images/campoCalcio.jpg" width="30%">
+                            <div class="cardTitle">
+                                <h3>Calcio a 5</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                    <div class="row">
+                        <h2 class="sport">Beachvolley</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="myCard">
+                                <img class="cardImg" src="../static/images/beachVolley.jpg" width="11%">
+                                <div class="cardTitle">
+                                    <h3>Beachvolley a 4</h3>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+             </div>
+        </form>
+
+    </div>
 
 </body>
 </html>
